@@ -10,7 +10,7 @@ const api = new CoctailsAPI();
 api.getCategories().then(res => markupCategoies(res));
 
 function markupCategoies(data){
-const markup =  data.map((categorie) =>`<li>${categorie.strCategory}</li>`).join('');
+const markup =  data.map((categorie) =>`<li class="li_markupCategoies">${categorie.strCategory}</li>`).join('');
 refs.ulCategories.innerHTML = markup;
 };
 
@@ -64,7 +64,7 @@ function markupLetter(data){
     <h2>${coctail.strDrink}</h2>
     <p>Category: ${coctail.strCategory}</p>
     <p>Glass: ${coctail.strGlass}</p>
-    <ul>${filteredIngredients.map((ingredient) => `<li>${coctail[ingredient]}
+    <ul class="coctail_ingredient">${filteredIngredients.map((ingredient) => `<li>${coctail[ingredient]}
     </li>`).join('')}
     </ul>
     </li>`}).join('')
@@ -82,18 +82,18 @@ function markupById(data){
     const marId = data.map(coctail =>{
     const filteredById = ingredients.filter((ingredient) => coctail[ingredient]); 
     const filterMeasure = strMeasure.filter((measure) => coctail[measure]);
-    return  `<li id="${coctail.idDrink}">
+    return  `<li class="markup_by_id" id="${coctail.idDrink}">
     <img src="${coctail.strDrinkThumb}" alt="${coctail.strDrink}" loading="lazy" width="300"/>
     <h2>${coctail.strDrink}</h2>
-    <p>Category: ${coctail.strCategory}</p>
-    <p>Glass: ${coctail.strGlass}</p>
-    <p>Instructions: ${coctail.strInstructions}</p>
-    <ul>${filteredById.map((ingredient) => `<li>${coctail[ingredient]}
+    <p class="markup_by_category">Category: ${coctail.strCategory}</p>
+    <p class="markup_by_glass">Glass: ${coctail.strGlass}</p>
+    <p class="markup_by_ingredient">Instructions: ${coctail.strInstructions}</p><div class="markup_by_id_div">
+    <ul class="markup_by_coctail_ingredient">${filteredById.map((ingredient) => `<li>${coctail[ingredient]}
     </li>`).join('')}
     </ul>
-    <ul>${filterMeasure.map((measure) => `<li>${coctail[measure]}
+    <ul class="markup_by_coctail_measure">${filterMeasure.map((measure) => `<li>${coctail[measure]}
     </li>`).join('')}
-    </ul>
+    </ul></div>
     </li>`}).join('')
     refs.ulCoctails.innerHTML = marId;
 };

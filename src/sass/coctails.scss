@@ -1,5 +1,176 @@
-#form{
-    padding-top: 20px;
-    text-align: center;
-    padding-bottom: 20px;
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
 }
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+}
+
+body {
+  background-color: rgba(255, 127, 80, 0.676);
+}
+#form {
+  background-color: rgba(255, 99, 71, 0.557);
+  padding-top: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #84a278;
+}
+#input {
+  color: #131313;
+  outline: none;
+  background-color: cornsilk;
+  border: 1px solid #84a278;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+#categories-list {
+  list-style: none;
+  text-align: center;
+}
+#coctails-list {
+  background: rgba(255, 99, 71, 0.557);
+  padding-bottom: 40px;
+  padding-top: 40px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+}
+#coctails-list img{
+    box-shadow: 0 5px 10px #777;
+    transform: rotate(-3deg);  
+}
+#coctails-list h2{
+    color: azure; 
+    text-shadow: 2px 2px 4px #000000; 
+    padding-top: 15px;
+}
+.li_markupCategoies {
+  color: azure;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  text-shadow: 2px 2px 4px #000000;
+}
+.btn {
+  background-color: #fff8dc;
+  color: #131313;
+  cursor: pointer;
+  border: 2px solid #84a278;
+  border-radius: 1rem;
+  outline: none;
+  padding: 10px 32px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.29;
+}
+.coctail_ingredient{
+  list-style: none;
+}
+.markup_letter_item{
+  color:#ffffff;
+  margin-top: 10px;
+}
+.markup_letter_category{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.markup_letter_glass,
+.markup_letter_category{
+color: #ffffff;
+}
+.markup_by_ingredient{
+    color: #ffffff;
+    text-align: center;
+    font-weight: 400;
+font-size: 14px;
+line-height: 1.86;
+letter-spacing: 0.02em;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.markup_by_id{
+    background: rgba(0, 128, 0, 0.564);
+    width: 50%;
+    padding: 20px;
+}
+.markup_by_category,
+.markup_by_glass{
+color:#ffffff;
+font-weight: 700;
+font-size: 22px;
+line-height: 1.16;
+letter-spacing: 0.05em;
+margin-top: 20px;
+}
+.markup_by_coctail_ingredient,
+.markup_by_coctail_measure{
+  list-style: none;
+  color: #ffffff;
+  font-weight: 400;
+font-size: 18px;
+line-height: 1.67;
+letter-spacing: 0.02em;
+}
+.markup_by_id_div{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 0 auto;
+    width: 70%;
+    background: linear-gradient(180deg, #171a244c 0%, rgba(23, 26, 36, 0.2) 100%);
+}
+
+// .backdrop {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(46, 47, 66, 0.4);
+//   transition: opacity var(--transition), pointer-events var(--transition),
+//     visibility var(--transition);
+// }
+// .backdrop.is-hidden {
+//   opacity: 0;
+//   pointer-events: none;
+//   visibility: hidden;
+// }
+// .modal {
+//   width: 408px;
+//   min-height: 584px;
+//   background: #fcfcfc;
+//   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+//     0px 2px 1px rgba(0, 0, 0, 0.2);
+//   border-radius: 4px;
+
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%) scale(1);
+//   transition: transform var(--transition);
+//   padding: 24px;
+// }
+// .backdrop.is-hidden .modal {
+//   transform: translate(-50%, -50%) scale(1.5);
+// }
+// .backdrop-btn {
+//   box-sizing: border-box;
+//   border-radius: 50%;
+//   display: block;
+//   margin-left: auto;
+//   cursor: pointer;
+// }
