@@ -63,9 +63,9 @@ function markupLetter(data){
     return  `<li id="${coctail.idDrink}">
     <img src="${coctail.strDrinkThumb}" alt="${coctail.strDrink}" loading="lazy" width="300"/>
     <h2>${coctail.strDrink}</h2>
-    <p>Category: ${coctail.strCategory}</p>
-    <p>Glass: ${coctail.strGlass}</p>
-    <ul class="coctail_ingredient">${filteredIngredients.map((ingredient) => `<li>${coctail[ingredient]}
+    <p class="markup_letter_category">Category: ${coctail.strCategory}</p>
+    <p class="markup_letter_glass">Glass: ${coctail.strGlass}</p>
+    <ul class="coctail_ingredient">${filteredIngredients.map((ingredient) => `<li class="markup_letter_item">${coctail[ingredient]}
     </li>`).join('')}
     </ul>
     </li>`}).join('')
