@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import { CoctailsAPI } from "./script/CoctailsAPI";
 
 const refs = { 
@@ -37,12 +38,12 @@ function onSubmitForm(ev){
     const value = ev.currentTarget.elements.input.value.trim();
     // console.log(value);
     if(value === ''){
-        alert('Введіть значення');
+        Notiflix.Notify.failure('Введіть значення');
         return
     }
    api.getByLetter(value).then(res => {
     if(!res){
-        alert('Введіть 1 літеру');
+        Notiflix.Notify.warning('Введіть 1 літеру');
         return
     }
     markupLetter(res)
