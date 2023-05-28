@@ -14,8 +14,11 @@ img {
   display: block;
 }
 
-body {
-  background-color:  #508effac;;
+body.white {
+  background-color:  #508effac;
+}
+body.dark{
+  background-color: #13131364;
 }
 #form {
   background-color: #ffe8478e;
@@ -133,43 +136,107 @@ letter-spacing: 0.02em;
     background: linear-gradient(180deg, #171a244c 0%, rgba(23, 26, 36, 0.2) 100%);
 }
 
-// .backdrop {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background: rgba(46, 47, 66, 0.4);
-//   transition: opacity var(--transition), pointer-events var(--transition),
-//     visibility var(--transition);
-// }
-// .backdrop.is-hidden {
-//   opacity: 0;
-//   pointer-events: none;
-//   visibility: hidden;
-// }
-// .modal {
-//   width: 408px;
-//   min-height: 584px;
-//   background: #fcfcfc;
-//   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
-//     0px 2px 1px rgba(0, 0, 0, 0.2);
-//   border-radius: 4px;
+ .backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 47, 66, 0.4);
+  transition: opacity var(--transition), pointer-events var(--transition),
+    visibility var(--transition);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.modal {
+  width: 50%;
+  min-height: 584px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%) scale(1);
-//   transition: transform var(--transition);
-//   padding: 24px;
-// }
-// .backdrop.is-hidden .modal {
-//   transform: translate(-50%, -50%) scale(1.5);
-// }
-// .backdrop-btn {
-//   box-sizing: border-box;
-//   border-radius: 50%;
-//   display: block;
-//   margin-left: auto;
-//   cursor: pointer;
-// }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--transition);
+  padding: 24px;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+.backdrop-btn {
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
+}
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: fixed;
+  animation: rotate 1s linear infinite;
+  top: 50%;
+  left: 50%;
+}
+.loader::before , .loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #FFF;
+  animation: prixClipFix 2s linear infinite ;
+}
+.loader::after{
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg );
+  border-color: #FF3D00;
+}
+
+@keyframes rotate {
+  0%   {transform: rotate(0deg)}
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+}
+.checkbox{
+  position: relative;
+  padding: 1px;
+  width: 40px;
+  height: 20px;
+  background: white;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.span_checkbox{
+  width: 15px;
+  height: 15px;
+  background-color: #FF3D00;
+  border-radius: 3px;
+  display: block;
+}
+

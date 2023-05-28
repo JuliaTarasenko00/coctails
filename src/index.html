@@ -7,18 +7,26 @@
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="./index.js"></script>
   </head>
-  <body>
+  <body class="white">
     <!-- ❗️❗️❗️ Add partials like so for every page -->
+    <div class="loader visually-hidden"></div>
     <form id="form">
       <input type="text" id="input" />
       <button class="btn">Пошук</button>
     </form>
+    <div class="checkbox">
+      <label class="label_checkbox">
+        <input class="input_checkbox visually-hidden" type="checkbox">
+        <span class="span_checkbox"></span>
+      </label>
+    </div>
+    <button type="button" class="to_collection">To collection</button>
     <ul id="categories-list"></ul>
     <ul id="coctails-list"></ul>
-    <div class="backdrop">
+    <div class="backdrop is-hidden" >
       <div class="modal">
-        <button class="backdrop-btn" type="button">X</button>
       </div>
     </div>
+    <button class="to_top">To Top</button>
   </body>
 </html>
