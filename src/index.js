@@ -15,9 +15,10 @@ const refs = {
 
 const savedSettings = localStorage.getItem('settings');
 const parsedSettings = JSON.parse(savedSettings);
+console.log(parsedSettings)
 
 let coctailsCollections = parsedSettings || [];
-
+console.log(coctailsCollections)
 let clickToCollection = false;
 
 const api = new CoctailsAPI();
@@ -119,12 +120,14 @@ refs.ulCoctails.addEventListener('click', onClickCoctails);
 
 function onClickCoctails(event) {
   const elementId = event.target.closest('li').id;
+  console.log(elementId)
   refs.backdrop.classList.remove('is-hidden');
   api.getById(elementId).then(res => {
     markupById(res);
     const closeModal = document.querySelector('.backdrop-btn');
     const addCollection = document.querySelector('.add_collection');
     const resCoctail = res[0];
+    console.log(resCoctail)
     if (
       coctailsCollections.find(
         coctail => coctail.idDrink === resCoctail.idDrink
